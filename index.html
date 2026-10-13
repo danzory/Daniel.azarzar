@@ -71,9 +71,12 @@
 <body class="bg-gray-50 text-gray-800 min-h-screen pb-12">
     <!-- תוכן ראשי עם מרווח עליון שמותאם למובייל -->
     <div class="container mx-auto px-4 py-6 sm:p-6 lg:p-8 max-w-4xl">
-        <header class="text-center mb-6">
+        <header class="text-center mb-6 relative">
             <h1 class="text-3xl font-bold text-gray-900 tracking-tight">דוח התקדמות</h1>
             <p class="text-lg text-gray-500 font-medium mt-1">דניאל לוי</p>
+            <button id="openAddRecordBtn" class="absolute left-0 top-0 bg-blue-100 text-blue-600 hover:bg-blue-200 p-2.5 rounded-full shadow-sm transition-colors" title="הוסף עדכון">
+                <i data-lucide="plus" class="w-6 h-6"></i>
+            </button>
         </header>
 
         <!-- תפריט גלילה אופקי מותאם למגע -->
@@ -149,8 +152,8 @@
                                 <span class="font-semibold bg-gray-50 px-2 py-1 rounded">20 ק"ג x 8</span>
                             </div>
                             <div class="flex justify-between items-center text-green-600">
-                                <span class="font-bold text-sm">שיא אישי (29.06)</span>
-                                <span class="font-bold text-xl">60 ק"ג x 1</span>
+                                <span class="font-bold text-sm">שיא אישי (13.10)</span>
+                                <span class="font-bold text-xl">60 ק"ג x 3</span>
                             </div>
                         </div>
                         <!-- Trap Bar Deadlift Card -->
@@ -260,9 +263,23 @@
                     <div class="px-5 py-4 border-b border-gray-100 bg-gray-50">
                         <h2 class="text-lg font-bold text-gray-900 text-center">שיאים אישיים עדכניים</h2>
                     </div>
-                    <div class="p-4 grid grid-cols-1 gap-3">
+                    <div id="records-container" class="p-4 grid grid-cols-1 gap-3">
                         
-                        <!-- דדליפט רומני (עודכן) -->
+                        <!-- בנץ' פרס -->
+                        <div class="border border-yellow-200 rounded-xl p-3 bg-yellow-50 flex justify-between items-center shadow-sm">
+                            <div class="flex items-center gap-2">
+                                <div>
+                                    <div class="flex items-center gap-1">
+                                        <h4 class="font-bold text-gray-900 text-sm">בנץ' פרס</h4>
+                                        <i data-lucide="line-chart" class="graph-icon w-4 h-4 text-gray-400" data-exercise="benchPress" data-exercise-name="בנץ' פרס"></i>
+                                    </div>
+                                    <p class="text-xs text-gray-500 mt-1">13.10.26 <span class="text-yellow-600 font-bold mr-1">שיא חדש!</span></p>
+                                </div>
+                            </div>
+                            <p class="text-xl font-bold text-blue-600">60 ק"ג x 3</p>
+                        </div>
+
+                        <!-- דדליפט רומני (חדש) -->
                         <div class="border border-yellow-200 rounded-xl p-3 bg-yellow-50 flex justify-between items-center shadow-sm">
                             <div class="flex items-center gap-2">
                                 <div>
@@ -270,38 +287,86 @@
                                         <h4 class="font-bold text-gray-900 text-sm">דדליפט רומני</h4>
                                         <i data-lucide="line-chart" class="graph-icon w-4 h-4 text-gray-400" data-exercise="romanianDeadlift" data-exercise-name="דדליפט רומני"></i>
                                     </div>
-                                    <p class="text-xs text-gray-500 mt-1">23.05.26 <span class="text-yellow-600 font-bold mr-1">שיא חדש!</span></p>
+                                    <p class="text-xs text-gray-500 mt-1">13.10.26 <span class="text-yellow-600 font-bold mr-1">שיא חדש!</span></p>
                                 </div>
                             </div>
-                            <p class="text-xl font-bold text-blue-600">55 ק"ג x 7</p>
+                            <p class="text-xl font-bold text-blue-600">60 ק"ג x 5</p>
                         </div>
 
-                        <!-- פשיטות ברכיים (עודכן) -->
+                        <!-- קלין (חדש) -->
                         <div class="border border-yellow-200 rounded-xl p-3 bg-yellow-50 flex justify-between items-center shadow-sm">
+                            <div class="flex items-center gap-2">
+                                <div>
+                                    <div class="flex items-center gap-1">
+                                        <h4 class="font-bold text-gray-900 text-sm">קלין (Clean)</h4>
+                                        <i data-lucide="line-chart" class="graph-icon w-4 h-4 text-gray-400" data-exercise="clean" data-exercise-name="קלין (Clean)"></i>
+                                    </div>
+                                    <p class="text-xs text-gray-500 mt-1">13.10.26 <span class="text-yellow-600 font-bold mr-1">שיא חדש!</span></p>
+                                </div>
+                            </div>
+                            <p class="text-xl font-bold text-blue-600">40 ק"ג x 3</p>
+                        </div>
+
+                        <!-- פולי עליון מכונה (חדש) -->
+                        <div class="border border-yellow-200 rounded-xl p-3 bg-yellow-50 flex justify-between items-center shadow-sm">
+                            <div class="flex items-center gap-2">
+                                <div>
+                                    <div class="flex items-center gap-1">
+                                        <h4 class="font-bold text-gray-900 text-sm">פולי עליון מכונה</h4>
+                                        <i data-lucide="line-chart" class="graph-icon w-4 h-4 text-gray-400" data-exercise="latPulldown" data-exercise-name="פולי עליון מכונה"></i>
+                                    </div>
+                                    <p class="text-xs text-gray-500 mt-1">13.10.26 <span class="text-yellow-600 font-bold mr-1">שיא חדש!</span></p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-xl font-bold text-blue-600">42.5 ק"ג x 6</p>
+                                <p class="text-[10px] text-gray-500 font-medium">(כל צד)</p>
+                            </div>
+                        </div>
+
+                        <!-- חתירה רחבה (חדש) -->
+                        <div class="border border-yellow-200 rounded-xl p-3 bg-yellow-50 flex justify-between items-center shadow-sm">
+                            <div class="flex items-center gap-2">
+                                <div>
+                                    <div class="flex items-center gap-1">
+                                        <h4 class="font-bold text-gray-900 text-sm">חתירה רחבה</h4>
+                                        <i data-lucide="line-chart" class="graph-icon w-4 h-4 text-gray-400" data-exercise="wideRow" data-exercise-name="חתירה רחבה"></i>
+                                    </div>
+                                    <p class="text-xs text-gray-500 mt-1">13.10.26 <span class="text-yellow-600 font-bold mr-1">שיא חדש!</span></p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-xl font-bold text-blue-600">35 ק"ג x 6</p>
+                                <p class="text-[10px] text-gray-500 font-medium">(כל צד)</p>
+                            </div>
+                        </div>
+
+                        <!-- פשיטות ברכיים -->
+                        <div class="border border-gray-100 rounded-xl p-3 bg-white flex justify-between items-center shadow-sm">
                             <div class="flex items-center gap-2">
                                 <div>
                                     <div class="flex items-center gap-1">
                                         <h4 class="font-bold text-gray-900 text-sm">פשיטות ברכיים</h4>
                                         <i data-lucide="line-chart" class="graph-icon w-4 h-4 text-gray-400" data-exercise="legExtensions" data-exercise-name="פשיטות ברכיים"></i>
                                     </div>
-                                    <p class="text-xs text-gray-500 mt-1">29.06.26 <span class="text-yellow-600 font-bold mr-1">שיא חדש!</span></p>
+                                    <p class="text-xs text-gray-500 mt-1">29.06.26</p>
                                 </div>
                             </div>
-                            <p class="text-xl font-bold text-blue-600">62.5 ק"ג x 6</p>
+                            <p class="text-lg font-bold text-gray-700">62.5 ק"ג x 6</p>
                         </div>
 
                         <!-- האק סקוואט -->
-                        <div class="border border-yellow-200 rounded-xl p-3 bg-yellow-50 flex justify-between items-center shadow-sm">
+                        <div class="border border-gray-100 rounded-xl p-3 bg-white flex justify-between items-center shadow-sm">
                             <div class="flex items-center gap-2">
                                 <div>
                                     <div class="flex items-center gap-1">
                                         <h4 class="font-bold text-gray-900 text-sm">האק סקוואט</h4>
                                         <i data-lucide="line-chart" class="graph-icon w-4 h-4 text-gray-400" data-exercise="hackSquat" data-exercise-name="האק סקוואט"></i>
                                     </div>
-                                    <p class="text-xs text-gray-500 mt-1">26.05.26 <span class="text-yellow-600 font-bold mr-1">שיא חדש!</span></p>
+                                    <p class="text-xs text-gray-500 mt-1">26.05.26</p>
                                 </div>
                             </div>
-                            <p class="text-xl font-bold text-blue-600">105 ק"ג x 7</p>
+                            <p class="text-lg font-bold text-gray-700">105 ק"ג x 7</p>
                         </div>
 
                         <!-- חתירה עם מוט -->
@@ -361,20 +426,19 @@
                         </div>
                         
                         <!-- בנץ' פאוז -->
-                        <div class="border border-yellow-200 rounded-xl p-3 bg-yellow-50 flex justify-between items-center shadow-sm">
+                        <div class="border border-gray-100 rounded-xl p-3 bg-white flex justify-between items-center shadow-sm">
                             <div class="flex items-center gap-2">
                                 <div>
                                     <div class="flex items-center gap-1">
                                         <h4 class="font-bold text-gray-900 text-sm">בנץ' פאוז</h4>
                                         <i data-lucide="line-chart" class="graph-icon w-4 h-4 text-gray-400" data-exercise="pauseBenchPress" data-exercise-name="בנץ' פאוז"></i>
                                     </div>
-                                    <p class="text-xs text-gray-500 mt-1">26.05.26 <span class="text-yellow-600 font-bold mr-1">שיא חדש!</span></p>
+                                    <p class="text-xs text-gray-500 mt-1">26.05.26</p>
                                 </div>
                             </div>
-                            <p class="text-xl font-bold text-blue-600">47.5 ק"ג x 3</p>
+                            <p class="text-lg font-bold text-gray-700">47.5 ק"ג x 3</p>
                         </div>
 
-                        <!-- בנץ' צמוד -->
                         <!-- בנץ' צמוד -->
                         <div class="border border-gray-100 rounded-xl p-3 bg-white flex justify-between items-center shadow-sm">
                             <div class="flex items-center gap-2">
@@ -387,37 +451,6 @@
                                 </div>
                             </div>
                             <p class="text-lg font-bold text-gray-700">35 ק"ג x 5</p>
-                        </div>
-
-                        <!-- פולי עליון מכונה -->
-                        <div class="border border-yellow-200 rounded-xl p-3 bg-yellow-50 flex justify-between items-center shadow-sm">
-                            <div class="flex items-center gap-2">
-                                <div>
-                                    <div class="flex items-center gap-1">
-                                        <h4 class="font-bold text-gray-900 text-sm">פולי עליון מכונה</h4>
-                                        <i data-lucide="line-chart" class="graph-icon w-4 h-4 text-gray-400" data-exercise="latPulldown" data-exercise-name="פולי עליון מכונה"></i>
-                                    </div>
-                                    <p class="text-xs text-gray-500 mt-1">26.05.26 <span class="text-yellow-600 font-bold mr-1">שיא חדש!</span></p>
-                                </div>
-                            </div>
-                            <div class="text-right">
-                                <p class="text-xl font-bold text-blue-600">35 ק"ג x 6</p>
-                                <p class="text-[10px] text-gray-500 font-medium">(כל צד)</p>
-                            </div>
-                        </div>
-                        
-                        <!-- חתירה רחבה -->
-                        <div class="border border-gray-100 rounded-xl p-3 bg-white flex justify-between items-center shadow-sm">
-                            <div class="flex items-center gap-2">
-                                <div>
-                                    <div class="flex items-center gap-1">
-                                        <h4 class="font-bold text-gray-900 text-sm">חתירה רחבה</h4>
-                                        <i data-lucide="line-chart" class="graph-icon w-4 h-4 text-gray-400" data-exercise="wideRow" data-exercise-name="חתירה רחבה"></i>
-                                    </div>
-                                    <p class="text-xs text-gray-500 mt-1">16.04.26</p>
-                                </div>
-                            </div>
-                            <p class="text-lg font-bold text-gray-700">25 ק"ג x 8</p>
                         </div>
 
                         <!-- לחיצת כתפיים סמית -->
@@ -504,20 +537,6 @@
                             <p class="text-lg font-bold text-gray-700">-35 ק"ג x 4</p>
                         </div>
 
-                        <!-- בנץ' פרס -->
-                        <div class="border border-yellow-200 rounded-xl p-3 bg-yellow-50 flex justify-between items-center shadow-sm">
-                            <div class="flex items-center gap-2">
-                                <div>
-                                    <div class="flex items-center gap-1">
-                                        <h4 class="font-bold text-gray-900 text-sm">בנץ' פרס</h4>
-                                        <i data-lucide="line-chart" class="graph-icon w-4 h-4 text-gray-400" data-exercise="benchPress" data-exercise-name="בנץ' פרס"></i>
-                                    </div>
-                                    <p class="text-xs text-gray-500 mt-1">29.06.26 <span class="text-yellow-600 font-bold mr-1">שיא חדש!</span></p>
-                                </div>
-                            </div>
-                            <p class="text-xl font-bold text-blue-600">60 ק"ג x 1</p>
-                        </div>
-
                          <!-- כיסא כומר -->
                          <div class="border border-gray-100 rounded-xl p-3 bg-white flex justify-between items-center">
                             <div class="flex items-center gap-2">
@@ -593,14 +612,6 @@
                                 <p class="text-xs text-gray-400 mt-1">18.10.25</p>
                             </div>
                             <p class="text-lg font-bold text-gray-700">70 ק"ג x 3</p>
-                        </div>
-                         <!-- קלין -->
-                        <div class="border border-gray-100 rounded-xl p-3 bg-white flex justify-between items-center">
-                            <div>
-                                <h4 class="font-bold text-gray-800 text-sm">קלין (Clean)</h4>
-                                <p class="text-xs text-gray-400 mt-1">13.12.25</p>
-                            </div>
-                            <p class="text-lg font-bold text-gray-700">30 ק"ג x 5</p>
                         </div>
                     </div>
                 </div>
@@ -737,6 +748,51 @@
         </footer>
     </div>
 
+    <!-- Add Record Modal -->
+    <div id="addRecordModal" class="fixed inset-0 z-[60] flex items-end sm:items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm transition-opacity" id="addRecordBackdrop"></div>
+        <div class="bg-white w-full sm:w-auto sm:min-w-[400px] sm:max-w-md sm:rounded-2xl rounded-t-2xl shadow-2xl p-6 pointer-events-auto transform translate-y-full sm:translate-y-0 sm:scale-95 transition-transform duration-300 relative z-10 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-5 border-b border-gray-100 pb-3">
+                <h3 class="text-xl font-bold text-gray-900">הוספת עדכון חדש</h3>
+                <button id="closeAddRecordBtn" class="bg-gray-100 p-2 rounded-full text-gray-500 hover:bg-gray-200 transition-colors">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <form id="addRecordForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">שם התרגיל</label>
+                    <input type="text" id="exerciseNameInput" required class="w-full border border-gray-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="לדוגמה: סקוואט">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">תאריך</label>
+                    <input type="date" id="recordDateInput" required class="w-full border border-gray-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">תוצאה (משקל x חזרות)</label>
+                    <input type="text" id="recordResultInput" required class="w-full border border-gray-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="לדוגמה: 65 ק&quot;ג x 3">
+                </div>
+                <div class="flex items-center gap-2 pt-2 bg-gray-50 p-3 rounded-lg border border-gray-100">
+                    <input type="checkbox" id="isPRInput" class="w-5 h-5 text-blue-600 rounded border-gray-300 focus:ring-blue-500 cursor-pointer">
+                    <label for="isPRInput" class="text-sm font-bold text-gray-800 cursor-pointer">סמן אם זה שיא אישי חדש 🏆</label>
+                </div>
+                <button type="submit" id="saveRecordBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl shadow-md transition-colors flex justify-center items-center gap-2 mt-2">
+                    <i data-lucide="save" class="w-5 h-5"></i>
+                    שמור ועלה לענן
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Alert Modal -->
+    <div id="alertModal" class="fixed inset-0 z-[70] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm transition-opacity"></div>
+        <div class="bg-white rounded-2xl shadow-2xl p-6 pointer-events-auto relative z-10 max-w-sm w-full mx-4 text-center transform scale-95 transition-transform duration-300" id="alertContent">
+            <h3 id="alertTitle" class="text-lg font-bold text-gray-900 mb-2"></h3>
+            <p id="alertMessage" class="text-gray-600 mb-6"></p>
+            <button id="closeAlertBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-6 rounded-xl w-full transition-colors">הבנתי</button>
+        </div>
+    </div>
+
     <!-- Graph Modal -->
     <div id="graphModal" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300">
         <div class="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm transition-opacity" id="modalBackdrop"></div>
@@ -794,11 +850,11 @@
 
         const rawProgressData = {
             squat: [ {date: '1.8', weight: 20}, {date: '20.8', weight: 25}, {date: '10.9', weight: 25}, {date: '17.9', weight: 30}, {date: '24.9', weight: 30}, {date: '23.10', weight: 30}, {date: '3.11', weight: 35}, {date: '14.11', weight: 35}, {date: '27.11', weight: 30}, {date: '4.12', weight: 35}, {date: '12.12', weight: 35}, {date: '2.1', weight: 35}, {date: '26.1', weight: 35}, {date: '4.2', weight: 36.5}, {date: '18.2', weight: 45}, {date: '28.2', weight: 42.5}, {date: '18.3', weight: 40}, {date: '7.4', weight: 30}, {date: '22.4', weight: 40}, {date: '4.5', weight: 40}, {date: '18.5', weight: 35}, {date: '26.9', weight: 12.5}, {date: '3.10', weight: 50}, {date: '12.10', weight: 50}, {date: '1.11', weight: 50}, {date: '21.11', weight: 55}, {date: '29.11', weight: 60}, {date: '26.03', weight: 65} ],
-            benchPress: [ {date: '25.7', weight: 20}, {date: '1.8', weight: 20}, {date: '5.8', weight: 25}, {date: '12.8', weight: 25}, {date: '20.8', weight: 25}, {date: '27.8', weight: 25}, {date: '3.9', weight: 25}, {date: '10.9', weight: 27.5}, {date: '17.9', weight: 30}, {date: '24.9', weight: 32.5}, {date: '23.10', weight: 30}, {date: '3.11', weight: 30}, {date: '14.11', weight: 30}, {date: '21.11', weight: 35}, {date: '27.11', weight: 35}, {date: '4.12', weight: 30}, {date: '12.12', weight: 30}, {date: '24.12', weight: 35}, {date: '2.1', weight: 30}, {date: '9.1', weight: 35}, {date: '26.1', weight: 30}, {date: '4.2', weight: 35}, {date: '18.2', weight: 35}, {date: '28.2', weight: 35}, {date: '18.3', weight: 35}, {date: '7.4', weight: 35}, {date: '22.4', weight: 35}, {date: '27.4', weight: 35}, {date: '4.5', weight: 35}, {date: '18.5', weight: 35}, {date: '3.6', weight: 35}, {date: '9.6', weight: 35}, {date: '8.9', weight: 37.5}, {date: '14.9', weight: 40}, {date: '26.9', weight: 40}, {date: '3.10', weight: 10}, {date: '12.10', weight: 42.5}, {date: '24.10', weight: 45}, {date: '1.11', weight: 45}, {date: '21.11', weight: 45}, {date: '29.11', weight: 50}, {date: '18.1', weight: 47.5}, {date: '07.02', weight: 45}, {date: '14.02', weight: 47.5}, {date: '14.03', weight: 55}, {date: '29.06', weight: 60} ],
+            benchPress: [ {date: '25.7', weight: 20}, {date: '1.8', weight: 20}, {date: '5.8', weight: 25}, {date: '12.8', weight: 25}, {date: '20.8', weight: 25}, {date: '27.8', weight: 25}, {date: '3.9', weight: 25}, {date: '10.9', weight: 27.5}, {date: '17.9', weight: 30}, {date: '24.9', weight: 32.5}, {date: '23.10', weight: 30}, {date: '3.11', weight: 30}, {date: '14.11', weight: 30}, {date: '21.11', weight: 35}, {date: '27.11', weight: 35}, {date: '4.12', weight: 30}, {date: '12.12', weight: 30}, {date: '24.12', weight: 35}, {date: '2.1', weight: 30}, {date: '9.1', weight: 35}, {date: '26.1', weight: 30}, {date: '4.2', weight: 35}, {date: '18.2', weight: 35}, {date: '28.2', weight: 35}, {date: '18.3', weight: 35}, {date: '7.4', weight: 35}, {date: '22.4', weight: 35}, {date: '27.4', weight: 35}, {date: '4.5', weight: 35}, {date: '18.5', weight: 35}, {date: '3.6', weight: 35}, {date: '9.6', weight: 35}, {date: '8.9', weight: 37.5}, {date: '14.9', weight: 40}, {date: '26.9', weight: 40}, {date: '3.10', weight: 10}, {date: '12.10', weight: 42.5}, {date: '24.10', weight: 45}, {date: '1.11', weight: 45}, {date: '21.11', weight: 45}, {date: '29.11', weight: 50}, {date: '18.1', weight: 47.5}, {date: '07.02', weight: 45}, {date: '14.02', weight: 47.5}, {date: '14.03', weight: 55}, {date: '29.06', weight: 60}, {date: '13.10', weight: 60} ],
             trapBarDeadlift: [ {date: '25.7', weight: 30}, {date: '1.8', weight: 30}, {date: '27.8', weight: 30}, {date: '3.9', weight: 30}, {date: '2.1', weight: 45}, {date: '9.1', weight: 45}, {date: '26.1', weight: 50}, {date: '4.2', weight: 20}, {date: '18.2', weight: 50}, {date: '28.2', weight: 50}, {date: '18.3', weight: 50}, {date: '22.4', weight: 45}, {date: '27.4', weight: 60}, {date: '8.9', weight: 65}, {date: '14.9', weight: 60}, {date: '26.9', weight: 70}, {date: '18.10', weight: 70} ],
             pullups: [ {date: '1.8', weight: -49}, {date: '20.8', weight: -42}, {date: '27.8', weight: -42}, {date: '17.9', weight: -42}, {date: '23.10', weight: -35}, {date: '3.11', weight: -35}, {date: '14.11', weight: -35}, {date: '24.12', weight: -35}, {date: '2.1', weight: -42}, {date: '26.1', weight: -35}, {date: '18.3', weight: -35}, {date: '26.03', weight: -30}, {date: '29.03', weight: -29}, {date: '16.04', weight: -28.5} ],
             dips: [ {date: '25.7', weight: -56}, {date: '1.8', weight: -49}, {date: '20.8', weight: -49}, {date: '27.8', weight: -49}, {date: '10.9', weight: -42}, {date: '17.9', weight: -35}, {date: '23.10', weight: -35}, {date: '3.11', weight: -42}, {date: '14.11', weight: -35}, {date: '24.12', weight: -35}, {date: '2.1', weight: -42}, {date: '9.1', weight: -35}, {date: '4.2', weight: -35}, {date: '18.2', weight: -35}, {date: '28.2', weight: -35}, {date: '14.9', weight: -35}, {date: '12.10', weight: -35}, {date: '24.10', weight: -28}, {date: '21.11', weight: -24}, {date: '19.12', weight: -21} ],
-            latPulldown: [ {date: '8.9', weight: 60}, {date: '14.9', weight: 60}, {date: '26.9', weight: 25}, {date: '11.1', weight: 32.5}, {date: '07.05', weight: 32.5}, {date: '26.05', weight: 35} ],
+            latPulldown: [ {date: '8.9', weight: 60}, {date: '14.9', weight: 60}, {date: '26.9', weight: 25}, {date: '11.1', weight: 32.5}, {date: '07.05', weight: 32.5}, {date: '26.05', weight: 35}, {date: '13.10', weight: 42.5} ],
             cableLatPulldown: [ {date: '14.05', weight: 40} ],
             crossoverFly: [ {date: '1.11', weight: 7.5} ],
             barbellRow: [ {date: '18.1', weight: 30}, {date: '24.1', weight: 37.5}, {date: '14.05', weight: 35} ],
@@ -806,17 +862,18 @@
             bulgarianSplitSquat: [ {date: '24.1', weight: 22.5} ],
             wideGripAssistedPullups: [ {date: '30.1', weight: -35}, {date: '21.03', weight: -35} ],
             pauseSquat: [ {date: '07.02', weight: 45} ],
-            romanianDeadlift: [ {date: '18.01', weight: 40}, {date: '07.02', weight: 45}, {date: '14.02', weight: 50}, {date: '14.03', weight: 43.75}, {date: '21.03', weight: 45}, {date: '07.04', weight: 50}, {date: '07.05', weight: 55}, {date: '23.05', weight: 55} ],
+            romanianDeadlift: [ {date: '18.01', weight: 40}, {date: '07.02', weight: 45}, {date: '14.02', weight: 50}, {date: '14.03', weight: 43.75}, {date: '21.03', weight: 45}, {date: '07.04', weight: 50}, {date: '07.05', weight: 55}, {date: '23.05', weight: 55}, {date: '13.10', weight: 60} ],
             hackSquat: [ {date: '18.10', weight: 80}, {date: '26.02', weight: 90}, {date: '29.03', weight: 100}, {date: '14.05', weight: 105}, {date: '26.05', weight: 105} ],
             preacherCurl: [ {date: '19.12', weight: 10}, {date: '26.02', weight: 10} ],
             inclineSmithPress: [ {date: '26.02', weight: 12.5}, {date: '26.03', weight: 15} ],
             behindNeckSmithPress: [ {date: '21.03', weight: 10}, {date: '26.03', weight: 10}, {date: '29.03', weight: 10} ],
             seatedLegCurl: [ {date: '29.03', weight: 40} ],
             lyingLegCurl: [ {date: '16.04', weight: 9}, {date: '14.05', weight: 10} ],
-            wideRow: [ {date: '16.04', weight: 25} ],
+            wideRow: [ {date: '16.04', weight: 25}, {date: '13.10', weight: 35} ],
             pauseBenchPress: [ {date: '07.05', weight: 45}, {date: '26.05', weight: 47.5} ],
             closeGripBenchPress: [ {date: '07.05', weight: 35} ],
-            legExtensions: [ {date: '13.12', weight: 55}, {date: '07.05', weight: 50}, {date: '23.05', weight: 60}, {date: '29.06', weight: 62.5} ]
+            legExtensions: [ {date: '13.12', weight: 55}, {date: '07.05', weight: 50}, {date: '23.05', weight: 60}, {date: '29.06', weight: 62.5} ],
+            clean: [ {date: '13.12', weight: 30}, {date: '13.10', weight: 40} ]
         };
 
         const progressData = {};
@@ -927,9 +984,174 @@
             }
         });
     </script>
+
+    <!-- Firebase Integration Module -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Firebase configuration from Eyal-Trainer project
+        const firebaseConfig = {
+            apiKey: "AIzaSyBx57Fl7Fah5m_OQXlkxaZppy7RIrEO1a4",
+            authDomain: "eyal-trainer.firebaseapp.com",
+            projectId: "eyal-trainer",
+            storageBucket: "eyal-trainer.firebasestorage.app",
+            messagingSenderId: "310306695091",
+            appId: "1:310306695091:web:00cd6b005391f1ab900dc6",
+            measurementId: "G-KLC1H72DMY"
+        };
+        const appId = 'daniel-levi-tracker';
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+        let currentUser = null;
+
+        const openAddRecordBtn = document.getElementById('openAddRecordBtn');
+        const addRecordModal = document.getElementById('addRecordModal');
+        const addRecordBackdrop = document.getElementById('addRecordBackdrop');
+        const closeAddRecordBtn = document.getElementById('closeAddRecordBtn');
+        const addRecordForm = document.getElementById('addRecordForm');
+        const recordDateInput = document.getElementById('recordDateInput');
+        const saveRecordBtn = document.getElementById('saveRecordBtn');
+        
+        const alertModal = document.getElementById('alertModal');
+        const alertContent = document.getElementById('alertContent');
+        const closeAlertBtn = document.getElementById('closeAlertBtn');
+        
+        const showAlert = (title, message) => {
+            document.getElementById('alertTitle').textContent = title;
+            document.getElementById('alertMessage').textContent = message;
+            alertModal.classList.remove('pointer-events-none', 'opacity-0');
+            alertContent.classList.remove('scale-95');
+        };
+
+        closeAlertBtn.addEventListener('click', () => {
+            alertContent.classList.add('scale-95');
+            alertModal.classList.add('opacity-0');
+            setTimeout(() => alertModal.classList.add('pointer-events-none'), 300);
+        });
+
+        const closeFormModal = () => {
+            addRecordModal.querySelector('.bg-white').classList.add('translate-y-full', 'sm:scale-95');
+            addRecordModal.classList.add('opacity-0');
+            setTimeout(() => addRecordModal.classList.add('pointer-events-none'), 300);
+        };
+
+        openAddRecordBtn.addEventListener('click', () => {
+            recordDateInput.valueAsDate = new Date(); // default to today
+            addRecordModal.classList.remove('pointer-events-none', 'opacity-0');
+            addRecordModal.querySelector('.bg-white').classList.remove('translate-y-full', 'sm:scale-95');
+        });
+
+        closeAddRecordBtn.addEventListener('click', closeFormModal);
+        addRecordBackdrop.addEventListener('click', closeFormModal);
+
+        const renderFirebaseRecords = (records) => {
+            // Remove previous dynamically loaded records to prevent duplication on updates
+            document.querySelectorAll('.firebase-record').forEach(el => el.remove());
+
+            const container = document.getElementById('records-container');
+            
+            records.forEach(record => {
+                const dateObj = new Date(record.date);
+                const formattedDate = `${dateObj.getDate().toString().padStart(2, '0')}.${(dateObj.getMonth() + 1).toString().padStart(2, '0')}.${dateObj.getFullYear().toString().substring(2)}`;
+                
+                const card = document.createElement('div');
+                card.className = `firebase-record border rounded-xl p-3 flex justify-between items-center shadow-sm ${record.isPR ? 'border-yellow-200 bg-yellow-50' : 'border-gray-100 bg-white'}`;
+                
+                let prBadge = record.isPR ? `<span class="text-yellow-600 font-bold mr-1">שיא חדש!</span>` : '';
+                
+                card.innerHTML = `
+                    <div class="flex items-center gap-2">
+                        <div>
+                            <div class="flex items-center gap-1">
+                                <h4 class="font-bold text-gray-900 text-sm">${record.exerciseName}</h4>
+                                <span class="bg-blue-100 text-blue-600 text-[10px] px-1.5 py-0.5 rounded font-bold ml-1">ענן ☁️</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">${formattedDate} ${prBadge}</p>
+                        </div>
+                    </div>
+                    <p class="text-xl font-bold text-blue-600">${record.result}</p>
+                `;
+                
+                // Add to the top of the list
+                container.insertBefore(card, container.firstChild);
+            });
+        };
+
+        const initFirebaseData = async () => {
+            try {
+                await signInAnonymously(auth);
+                currentUser = auth.currentUser;
+                if (!currentUser) return;
+
+                const recordsRef = collection(db, 'progressRecords');
+                // We order by timestamp ascending so that when we use insertBefore later, the newest ends up on top.
+                const q = query(recordsRef, orderBy('timestamp', 'asc'));
+
+                onSnapshot(q, (snapshot) => {
+                    const records = [];
+                    snapshot.forEach(doc => {
+                        records.push({ id: doc.id, ...doc.data() });
+                    });
+                    renderFirebaseRecords(records);
+                }, (error) => {
+                    console.error("Error listening to Firestore:", error);
+                });
+
+            } catch (error) {
+                console.error("Auth Error:", error);
+                // We don't alert here so the app keeps working offline/without config
+            }
+        };
+
+        addRecordForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            if (!currentUser) {
+                showAlert('שגיאה בחיבור לענן', 'לא ניתן לשמור. המערכת לא הצליחה להתחבר למסד הנתונים.');
+                return;
+            }
+
+            const exerciseName = document.getElementById('exerciseNameInput').value;
+            const recordDate = document.getElementById('recordDateInput').value;
+            const recordResult = document.getElementById('recordResultInput').value;
+            const isPR = document.getElementById('isPRInput').checked;
+            
+            const originalBtnHtml = saveRecordBtn.innerHTML;
+            saveRecordBtn.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> מעלה לענן...`;
+            saveRecordBtn.disabled = true;
+
+            try {
+                const recordsRef = collection(db, 'progressRecords');
+                await addDoc(recordsRef, {
+                    exerciseName,
+                    date: recordDate,
+                    result: recordResult,
+                    isPR,
+                    timestamp: Date.now(),
+                    userId: currentUser.uid
+                });
+                
+                closeFormModal();
+                addRecordForm.reset();
+                showAlert('הצלחה!', 'העדכון נשמר בהצלחה בענן וכל מי שפותח את האפליקציה יראה אותו מיד.');
+                
+            } catch (error) {
+                console.error("Error adding document: ", error);
+                showAlert('שגיאת שמירה', 'אירעה שגיאה בעת שמירת הנתונים. ייתכן שצריך להגדיר הרשאות כתיבה (Rules) ב-Firestore: ' + error.message);
+            } finally {
+                saveRecordBtn.innerHTML = originalBtnHtml;
+                saveRecordBtn.disabled = false;
+                if (window.lucide) window.lucide.createIcons();
+            }
+        });
+
+        // Initialize Auth & Firestore sync
+        initFirebaseData();
+    </script>
 </body>
 </html>
-
-
-
-```
